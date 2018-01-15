@@ -23,7 +23,7 @@ public class App {
 		return UriBuilder.fromUri(URL_OPENSHIFT).port(9991).build();
 	}
 
-	public static void main(final String[] args) {
+	public static void main2(final String[] args) {
 		final ResourceConfig rc = new ResourceConfig();
 		rc.packages("timesup.org.naroyo.timesup.rest");
 		try {
@@ -38,5 +38,9 @@ public class App {
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void main(final String[] args) {
+		System.err.println("Bonjour Nicolas");
 	}
 }
