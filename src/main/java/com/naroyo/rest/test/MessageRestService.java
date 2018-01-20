@@ -32,16 +32,7 @@ public class MessageRestService {
 		final Test test = testRepository.getTextValue();
 
 		return Response.status(200).entity(test.getText()).build();
-	}
 
-	@GET
-	@Path("/testbdd/{text}")
-	public Response testBdd(@PathParam("text") final String text) throws SQLException {
-
-		final TestRepository testRepository = new TestRepository();
-		testRepository.insertInto(text);
-
-		return Response.status(200).build();
 	}
 
 }

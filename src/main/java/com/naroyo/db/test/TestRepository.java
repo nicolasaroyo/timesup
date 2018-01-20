@@ -33,11 +33,4 @@ public class TestRepository {
 		test.setText(resultSet.getString("text"));
 		return test;
 	}
-
-	public void insertInto(final String text) throws SQLException {
-		final PreparedStatement statement = this.connection
-				.prepareStatement("insert into database.test (text) values (?)");
-		statement.setString(1, text);
-		statement.execute();
-	}
 }
