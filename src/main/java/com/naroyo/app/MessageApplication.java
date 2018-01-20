@@ -5,17 +5,17 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import com.naroyo.rest.MessageRestService;
+import com.naroyo.rest.test.MessageRestService;
 
 public class MessageApplication extends Application {
-	private Set<Object> singletons = new HashSet<Object>();
+	private Set<Object> singletons = new HashSet<>();
 
 	public MessageApplication() {
-		singletons.add(new MessageRestService());
+		this.singletons.add(new MessageRestService());
 	}
 
 	@Override
 	public Set<Object> getSingletons() {
-		return singletons;
+		return this.singletons;
 	}
 }
