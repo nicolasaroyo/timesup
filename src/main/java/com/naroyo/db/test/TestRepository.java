@@ -17,7 +17,7 @@ public class TestRepository {
 		final DataSource dataSource = new MysqlDataSource();
 		Connection connection = null;
 		try {
-			connection = dataSource.getConnection("user", "password");
+			connection = dataSource.getConnection("root", "password");
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
