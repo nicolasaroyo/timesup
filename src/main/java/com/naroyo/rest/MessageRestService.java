@@ -1,4 +1,4 @@
-package com.mkyong.rest;
+package com.naroyo.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
