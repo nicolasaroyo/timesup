@@ -11,7 +11,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 public class TestRepository {
 
-	private Connection connection = this.getConnection();
+	private final Connection connection = this.getConnection();
 
 	private Connection getConnection() {
 		final DataSource dataSource = new MysqlDataSource();
