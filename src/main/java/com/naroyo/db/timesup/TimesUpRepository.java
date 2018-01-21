@@ -12,6 +12,7 @@ public class TimesUpRepository {
 		final Mot mot1 = new Mot("La belle et la bête", Lists.newArrayList(Tag.DISNEY, Tag.FILM));
 		final Mot mot2 = new Mot("Rambo", Lists.newArrayList(Tag.FILM));
 		final Mot mot3 = new Mot("Soprano", Lists.newArrayList(Tag.MUSIQUE));
-		return Lists.newArrayList(mot1, mot2, mot3);
+		final Mot mot4 = new Mot("My Heart will go on", Lists.newArrayList(Tag.MUSIQUE, Tag.FILM));
+		return Lists.newArrayList(mot1, mot2, mot3, mot4);
 	}
 }
