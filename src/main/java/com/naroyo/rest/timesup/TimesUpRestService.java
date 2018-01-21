@@ -7,6 +7,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
@@ -16,8 +17,8 @@ import com.google.common.collect.Lists;
 import com.naroyo.controller.timesup.TimesUpController;
 
 @Path("/timesup")
-@Consumes("application/json")
-@Produces("application/json")
+@Consumes(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 public class TimesUpRestService {
 
 	private final TimesUpController controller = new TimesUpController();
