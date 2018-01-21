@@ -24,4 +24,8 @@ public class TimesUpController {
 		// @formatter:on		
 	}
 
+	public List<Mot> recupererTousLesMots() {
+		return this.repository.findAll();
+	}
+
 }

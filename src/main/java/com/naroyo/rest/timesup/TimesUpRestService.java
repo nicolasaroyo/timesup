@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response.Status;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.Lists;
 import com.naroyo.controller.timesup.TimesUpController;
 
 @Path("/timesup")
@@ -29,6 +30,22 @@ public class TimesUpRestService {
 			throws JsonProcessingException {
 		final List<Mot> mots = this.controller.recupererListeMots(includes, excludes, nbMax);
 		final String reponse = this.objectMapper.writeValueAsString(mots);
+		return Response.status(Status.OK).entity(reponse).build();
+	}
+
+	@GET
+	@Path("/all")
+	public Response getAll() throws JsonProcessingException {
+		final List<Mot> mots = this.controller.recupererTousLesMots();
+		final String reponse = this.objectMapper.writeValueAsString(mots);
+		return Response.status(Status.OK).entity(reponse).build();
+	}
+
+	@GET
+	@Path("/tags")
+	public Response getTags() throws JsonProcessingException {
+		final List<Tag> tags = Lists.newArrayList(Tag.values());
+		final String reponse = this.objectMapper.writeValueAsString(tags);
 		return Response.status(Status.OK).entity(reponse).build();
 	}
 
