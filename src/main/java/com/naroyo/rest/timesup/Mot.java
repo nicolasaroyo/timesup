@@ -1,16 +1,18 @@
 package com.naroyo.rest.timesup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Mot {
 	private String mot;
-	private final List<Tag> tags = new ArrayList<>();
+	private List<Tag> tags;
+
+	public Mot() {
+
+	}
 
 	public Mot(final String mot, final List<Tag> tags) {
 		this.mot = mot;
-		this.tags.clear();
-		this.tags.addAll(tags);
+		this.tags = tags;
 	}
 
 	public String getMot() {
@@ -23,5 +25,9 @@ public class Mot {
 
 	public List<Tag> getTags() {
 		return this.tags;
+	}
+
+	public void setTags(final List<Tag> tags) {
+		this.tags = tags;
 	}
 }

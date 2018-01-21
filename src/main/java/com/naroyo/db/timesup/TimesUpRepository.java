@@ -1,18 +1,30 @@
 package com.naroyo.db.timesup;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
-import com.google.common.collect.Lists;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.naroyo.rest.timesup.Mot;
-import com.naroyo.rest.timesup.Tag;
 
 public class TimesUpRepository {
 
+	private ObjectMapper objectMapper = new ObjectMapper();
+
+	private final static String DATABASE_FILE_NAME = "db.json";
+
+	private ListeMots readFile() {
+		final InputStream inputStream = this.getClass().getResourceAsStream(DATABASE_FILE_NAME);
+		ListeMots liste = new ListeMots();
+		try {
+			liste = this.objectMapper.readValue(inputStream, ListeMots.class);
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
+		return liste;
+	}
+
 	public List<Mot> findAll() {
-		final Mot mot1 = new Mot("La belle et la bête", Lists.newArrayList(Tag.DISNEY, Tag.FILM));
-		final Mot mot2 = new Mot("Rambo", Lists.newArrayList(Tag.FILM));
-		final Mot mot3 = new Mot("Soprano", Lists.newArrayList(Tag.MUSIQUE));
-		final Mot mot4 = new Mot("My Heart will go on", Lists.newArrayList(Tag.MUSIQUE, Tag.FILM));
-		return Lists.newArrayList(mot1, mot2, mot3, mot4);
+		return this.readFile().getListe();
 	}
 }

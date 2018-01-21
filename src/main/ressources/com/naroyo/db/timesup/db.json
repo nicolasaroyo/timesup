@@ -1,0 +1,30 @@
+{
+	"liste": [
+		{
+			"mot": "La belle et la bête",
+			"tags": [
+				"DISNEY",
+				"FILM"
+			]
+		},
+		{
+			"mot": "Rambo",
+			"tags": [
+				"FILM"
+			]
+		},
+		{
+			"mot": "Soprano",
+			"tags": [
+				"MUSIQUE"
+			]
+		},
+		{
+			"mot": "My Heart will go on",
+			"tags": [
+				"MUSIQUE",
+				"FILM"
+			]
+		}
+	]
+}
