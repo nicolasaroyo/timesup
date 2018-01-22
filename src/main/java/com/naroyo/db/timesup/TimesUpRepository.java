@@ -9,9 +9,9 @@ import com.naroyo.rest.timesup.Mot;
 
 public class TimesUpRepository {
 
-	private ObjectMapper objectMapper = new ObjectMapper();
+	private final ObjectMapper objectMapper = new ObjectMapper();
 
-	private final static String DATABASE_FILE_NAME = "db.json";
+	private static final String DATABASE_FILE_NAME = "db.json";
 
 	private ListeMots readFile() {
 		final InputStream inputStream = this.getClass().getResourceAsStream(DATABASE_FILE_NAME);

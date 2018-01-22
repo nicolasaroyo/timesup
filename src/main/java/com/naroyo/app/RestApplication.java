@@ -8,11 +8,11 @@ import javax.ws.rs.core.Application;
 import com.naroyo.rest.MessageRestService;
 import com.naroyo.rest.timesup.TimesUpRestService;
 
-public class MessageApplication extends Application {
+public class RestApplication extends Application {
 
 	private Set<Object> singletons = new HashSet<>();
 
-	public MessageApplication() {
+	public RestApplication() {
 		this.singletons.add(new MessageRestService());
 		this.singletons.add(new TimesUpRestService());
 	}
