@@ -28,4 +28,8 @@ public class TimesUpController {
 		return this.repository.findAll();
 	}
 
+	public boolean ajouterMot(final Mot mot) {
+		return this.repository.addMot(mot);
+	}
+
 }

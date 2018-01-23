@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -32,6 +33,13 @@ public class TimesUpRestService {
 		final List<Mot> mots = this.controller.recupererListeMots(includes, excludes, nbMax);
 		final String reponse = this.objectMapper.writeValueAsString(mots);
 		return Response.status(Status.OK).entity(reponse).build();
+	}
+
+	@POST
+	@Path("/")
+	public Response addWord(@QueryParam("mot") final String mot, @QueryParam("tags") final List<Tag> tags) {
+		final boolean done = this.controller.ajouterMot(new Mot(mot, tags));
+		return Response.status(done ? Status.CREATED : Status.INTERNAL_SERVER_ERROR).build();
 	}
 
 	@GET
