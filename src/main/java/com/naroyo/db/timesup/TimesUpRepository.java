@@ -17,7 +17,7 @@ public class TimesUpRepository {
 	private static final String DATABASE_FILE_NAME = "db.json";
 
 	private ListeMots readFile() {
-		final InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(DATABASE_FILE_NAME);
+		final InputStream inputStream = this.getClass().getResourceAsStream(DATABASE_FILE_NAME);
 		ListeMots liste = new ListeMots();
 		try {
 			liste = this.objectMapper.readValue(inputStream, ListeMots.class);
@@ -35,8 +35,7 @@ public class TimesUpRepository {
 		} catch (final JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		try (final PrintWriter output = new PrintWriter(
-				this.getClass().getClassLoader().getResource(DATABASE_FILE_NAME).getPath())) {
+		try (final PrintWriter output = new PrintWriter(this.getClass().getResource(DATABASE_FILE_NAME).getPath())) {
 			output.println(json);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
